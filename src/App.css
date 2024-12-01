@@ -9,11 +9,11 @@
   color: red;
   font-size: 14px;
   margin-top: 5px;
-  display: none; /* Başlangıçta gizli olacak */
+  display: none; 
 }
 
 .error-message.show {
-  display: block; /* Hata mesajı görünür hale geldiğinde */
+  display: block; 
 }
 
 
