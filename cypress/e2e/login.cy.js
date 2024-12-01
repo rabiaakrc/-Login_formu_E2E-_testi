@@ -36,10 +36,10 @@ describe("Login form - validation errors", () => {
 
   it("should submit form and navigate to success page", () => {
     cy.get('input[type="email"]').type("test@example.com"); // Geçerli email
-    cy.get('input[type="password"]').type("Password1"); // Geçerli şifre
-    cy.get('input[type="checkbox"]').check(); // Şartları kabul etme
-    cy.get("button").should("not.be.disabled"); // Buton aktif olmalı
-    cy.get("form").submit(); // Form gönderme
+    cy.get('input[type="password"]').type("Password1"); 
+    cy.get('input[type="checkbox"]').check(); 
+    cy.get("button").should("not.be.disabled");
+    cy.get("form").submit(); 
     cy.url().should("include", "/success"); 
   });
 });
