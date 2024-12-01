@@ -3,6 +3,7 @@ describe("Login form - validation errors", () => {
     cy.visit("http://localhost:5173");
   });
 
+  
   it("should show error message for invalid email", () => {
     cy.get('input[type="email"]').type("invalidemail"); 
     cy.get('input[type="password"]').type("Password1"); 
@@ -12,6 +13,8 @@ describe("Login form - validation errors", () => {
       .and("contain", "Geçerli bir email giriniz."); 
   });
   
+
+
   it("should show error message for invalid password", () => {
     cy.get('input[type="email"]').type("test@example.com"); 
     cy.get('input[type="password"]').type("123"); 
@@ -24,6 +27,7 @@ describe("Login form - validation errors", () => {
       ); 
   });
 
+
   it("should show error message for not accepting terms", () => {
     cy.get('input[type="email"]').type("test@example.com"); 
     cy.get('input[type="password"]').type("Password1"); 
@@ -33,6 +37,7 @@ describe("Login form - validation errors", () => {
       .should("be.visible") 
       .and("contain", "Şartları kabul etmelisiniz."); 
   });
+
 
   it("should submit form and navigate to success page", () => {
     cy.get('input[type="email"]').type("test@example.com"); 
